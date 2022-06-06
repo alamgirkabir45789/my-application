@@ -1,57 +1,14 @@
-import { Card, Col, FormGroup, Input, Label, Row } from "reactstrap";
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import Navigation from "../src/navigation/Navigation";
 import "./App.css";
 function App() {
   return (
     <div className="App">
       <div>
-        <h1>Test Form</h1>
+        <Navigation />
       </div>
-      <Card className="p-3 m-5">
-        <Row>
-          <Col sm={12} xs={12} md={4} lg={4} xl={4}>
-            <FormGroup className="d-flex">
-              <Label sm="3" size="sm" for="input-small-horizontal">
-                Email
-              </Label>
-              <span style={{ marginRight: "10px", marginLeft: "10px" }}>:</span>
-              <Input
-                type="text"
-                id="input-small-horizontal"
-                bsSize="sm"
-                placeholder="Small Input"
-              />
-            </FormGroup>
-          </Col>
-          <Col sm={12} xs={12} md={4} lg={4} xl={4}>
-            <FormGroup className="d-flex">
-              <Label sm="3" size="sm" for="input-small-horizontal">
-                Phone
-              </Label>
-              <span style={{ marginRight: "10px", marginLeft: "10px" }}>:</span>
-              <Input
-                type="text"
-                id="input-small-horizontal"
-                bsSize="sm"
-                placeholder="Small Input"
-              />
-            </FormGroup>
-          </Col>
-          <Col sm={12} xs={12} md={4} lg={4} xl={4}>
-            <FormGroup className="d-flex">
-              <Label sm="3" size="sm" for="input-small-horizontal">
-                Address
-              </Label>
-              <span style={{ marginRight: "10px", marginLeft: "10px" }}>:</span>
-              <Input
-                type="text"
-                id="input-small-horizontal"
-                bsSize="sm"
-                placeholder="Small Input"
-              />
-            </FormGroup>
-          </Col>
-        </Row>
-      </Card>
+      <div>Hello World</div>
     </div>
   );
 }
