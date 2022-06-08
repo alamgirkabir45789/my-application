@@ -1,9 +1,51 @@
-import React from 'react'
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/no-distracting-elements */
+import React from 'react';
+import profile from '../../assets/images/images.jpg';
 
 const About = () => {
   return (
-    <div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima quasi eaque earum ex consequuntur est, numquam obcaecati dolorem perspiciatis! Vitae neque, nostrum dicta eaque dolorem quibusdam quod odit. Quo deserunt labore, molestias similique nobis animi voluptas aperiam laborum magnam sed aut porro magni. Pariatur sed ipsa temporibus repudiandae fugiat repellat id commodi, ipsam libero nihil magni voluptatum impedit maiores dignissimos sunt a natus vel nostrum. Distinctio obcaecati, ducimus laboriosam et voluptatum autem ratione doloremque a eveniet natus architecto, consequatur, provident in. Aliquid enim nesciunt error iste pariatur, tempora deleniti accusamus assumenda molestias est voluptas voluptate, quos temporibus dignissimos, facere architecto provident magnam. Ab iste consequatur harum vitae. Exercitationem molestias ullam dignissimos ex maxime distinctio assumenda deserunt natus. Veniam repudiandae voluptatibus quidem nobis iste provident in nulla eius. Veritatis nemo corporis porro reprehenderit totam repellat velit? Nesciunt repellat perspiciatis molestias vel consectetur, mollitia natus magni! Voluptate eius vitae ad ipsam rem, corporis possimus maiores voluptates voluptatem ipsum dolorum optio dignissimos. Similique mollitia provident quisquam quidem. Distinctio nostrum aspernatur corporis, quod, fuga pariatur impedit neque ullam molestiae fugiat nemo. Ex a dolore aliquam nemo pariatur ducimus, quam vitae rerum quasi quod animi modi dolores numquam sunt deserunt perspiciatis dolor dolorem saepe atque? Recusandae sequi quibusdam repellendus minima aspernatur ratione facilis tempore, mollitia optio. Ex sequi velit, alias nisi blanditiis repellat quisquam recusandae modi porro, perspiciatis, architecto harum molestiae iusto quos animi consequatur at sunt voluptatum exercitationem atque autem. Minus fugit quia beatae magnam, iure, dolorum veniam quam harum quas, unde necessitatibus doloremque repellat. Modi quia blanditiis obcaecati totam repudiandae deleniti soluta magnam sed nostrum? Tenetur quidem, voluptatibus accusantium harum qui consequatur nulla cum rem molestiae repudiandae unde reiciendis minus quisquam dolorum facilis non illum molestias laboriosam asperiores architecto sit eligendi vero obcaecati! Libero est, quas cupiditate neque recusandae, id ipsa explicabo ea incidunt in pariatur ab illum sapiente, atque magni sit? Nesciunt alias sequi dignissimos praesentium officia dolorum unde aliquid dolore quis repudiandae amet ducimus, vero hic et possimus debitis impedit fuga? Repudiandae similique iste consectetur, corrupti temporibus aut. Labore magni hic suscipit, odio temporibus quis nisi aliquam dignissimos perferendis eius non aut provident excepturi repellendus corrupti doloremque libero accusantium repellat, nam quidem asperiores est quos. Mollitia eius tenetur, saepe, eaque ipsa, praesentium repudiandae sunt vero pariatur culpa amet ullam totam minima aperiam. Ratione voluptate quos eum quisquam eligendi, modi vero dolores adipisci illum quod dolor ipsum, repellendus nemo tempora ipsam iste error. Facere, eaque et? Consequuntur quam excepturi beatae veniam, nam illo assumenda optio minima est eaque iure sequi incidunt pariatur? Quasi, ipsum? Voluptatem, suscipit porro ex dolores consequuntur earum inventore eligendi totam sapiente ducimus. In optio, qui et tempora dolorum eum quod ullam facere fugit, perferendis ea expedita tempore maiores consectetur dignissimos incidunt consequatur! Ullam, sunt doloremque sint quas unde aliquid, asperiores animi architecto alias reprehenderit accusamus illo deleniti facilis quo hic incidunt obcaecati eius deserunt possimus mollitia qui, labore veritatis cum. Nobis quod quo soluta nisi repellendus aliquid sapiente obcaecati aliquam culpa, inventore commodi molestias atque illum, laborum aperiam!
+    <div >
+       {/* <marquee direction="right"> <h1>Welcome to Alamgir's Documentary</h1></marquee> */}
+        <div className='container-fluid'>
+          <div className="row">   
+          <div className='col-sm' >
+            <h2>Education</h2>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, sint. Est a, eos aliquid iure amet alias reiciendis? Corporis pariatur dolorum vero deleniti illo aperiam, iste ipsam similique officiis ratione.
+</p>
+          </div>    
+       
+          <div className='col-sm'>
+            <h2>Skill</h2>
+            <ul>
+        <li>Javascript</li>
+        <li>ReactJs</li>
+        <li>AngularJS</li>
+        <li>Javascript</li>
+        <li>Javascript</li>
+        </ul>
+          <img className='img-fluid  float-right' src={profile}  width={300} height={300}
+          style={{
+            position: "absolute",
+            top: "40%",
+            left: "60%",
+            transform: "translate(-50%, -50%)",
+            
+          }}
+          ></img>
+          </div>
+          <div className="col-sm">
+            <h2>Experience</h2>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas accusantium hic commodi soluta laborum molestiae saepe quisquam quos, iste omnis nesciunt natus, sequi atque nemo eveniet impedit, reiciendis cumque ratione.
+            </div>   
+          <div className='col-sm'>
+            <div>
+              <h2>Project</h2>
+            </div>
+          </div>
+          </div>
+        </div>
     </div>
   )
 }
