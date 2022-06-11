@@ -2,6 +2,7 @@ import React from "react";
 import { RouteObject, useRoutes } from "react-router-dom";
 import Navigation from "../navigation/Navigation";
 import About from "../views/about/About";
+import Contact from "../views/contact/Contact";
 import Error from "../views/Error/Error";
 import Home from "../views/home/Home";
 const Router = () => {
@@ -15,6 +16,10 @@ const Router = () => {
         {
           path: "/about",
           element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
         },
 
         { path: "*", element: <Error /> },

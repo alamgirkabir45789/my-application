@@ -1,15 +1,14 @@
-const str = "Hello World";
-const stringReverse = (arr) => {
-  return arr.split("").reverse().join("");
+let myWindow;
+const openWindow = () => {
+  mywindow = window.open(
+    "https://www.youtube.com/watch?v=bxmummkz71g&list=PLHiZ4m8vCp9OkrURufHpGUUTBjJhO9Ghy&index=103",
+    "_self"
+  );
 };
 
-console.log(stringReverse(str));
-
-const loopFunc = (atr) => {
-  let myArr = "";
-  for (let a of atr) {
-    myArr = a + myArr;
-  }
-  return myArr;
+const closeWindow = () => {
+  window.close(mywindow);
 };
-console.log(loopFunc("Bangladesh"));
+console.log(window.screen.availWidth);
+const screenWidth = document.getElementById("screen");
+screenWidth.innerHTML = "Screen Width is" + window.screen.availWidth;
