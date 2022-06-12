@@ -19,7 +19,7 @@ const Navigation = () => {
                 <li><Link  to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/about">Sign Up</Link></li>
+                <li><Link to="/register">Sign Up</Link></li>
                 <li><Link to="/about">Login</Link></li>
                 <li><Link to="/about">
                   <img className='rounded-circle img-fluid img-thumbnail float-right mx-auto ' src={profile} height={40} width={40}></img>
