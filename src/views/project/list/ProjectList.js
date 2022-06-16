@@ -7,7 +7,6 @@ import {
   Card,
   CardBody,
   CardHeader,
-  CardTitle,
   Col,
   FormGroup,
   Input,
@@ -15,6 +14,96 @@ import {
   Table,
 } from "reactstrap";
 import CustomModal from "../../../utility/customComponent/CustomModal";
+
+const myProject = [
+  {
+    id: 13,
+    name: "Garments ERP Project - Front End: React JS(Production)",
+    description: "ReactJs Application",
+    projectLink:
+      "https://bitbucket.org/rdmerp/erp_production/src/master/ or http://192.168.0.29/nasir/erp-production/-/tree/alamgir",
+    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    id: 12,
+    name: "Garments ERP Project - Front End: React JS(Merchandising)",
+    description: "ReactJs Application",
+    projectLink: "https://bitbucket.org/rdmerp/quadrion.erp/src/alamgir/UI/",
+    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    id: 11,
+    name: "E-Commerce App- ReactJs",
+    description: "ReactJs Application",
+    projectLink: "https://github.com/alamgirkabir45789/react-ecommerce-project",
+    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    id: 1,
+    name: "C#",
+    description: "ReactJs Application",
+    projectLink: "https://github.com/alamgirkabir45789/ExamProject",
+    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    id: 2,
+    name: "ASP.NET CORE",
+    description: "ReactJs Application",
+    projectLink: "https://github.com/alamgirkabir45789/CoreProject_Alamgir",
+    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    id: 3,
+    name: "ASP.NET MVC(CodeFast)",
+    description: "ReactJs Application",
+    projectLink:
+      "https://github.com/alamgirkabir45789/MvcCodeFastProject_Alamgir",
+    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    id: 4,
+    name: "ASP.NET MVC(DatabaseFast)",
+    description: "ReactJs Application",
+    projectLink:
+      "https://github.com/alamgirkabir45789/AspDotNetMvcProject_Alamgir",
+    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    id: 5,
+    name: "ASP.NET WEB FORM",
+    description: "ReactJs Application",
+    projectLink: "https://github.com/alamgirkabir45789/Asp_Project_Alamgir",
+    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    id: 6,
+    name: "MSSQL",
+    description: "ReactJs Application",
+    projectLink: "https://github.com/alamgirkabir45789/SqlProject",
+    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    id: 7,
+    name: "SignalR",
+    description: "ReactJs Application",
+    projectLink: "https://github.com/alamgirkabir45789/SignalRProject_Alamgir",
+    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    id: 8,
+    name: "ASP.NET WEB API",
+    description: "ReactJs Application",
+    projectLink: "https://github.com/alamgirkabir45789/SmsCoreApi",
+    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    id: 9,
+    name: "Chat Application - NodeJs",
+    description: "ReactJs Application",
+    projectLink: "https://github.com/alamgirkabir45789/DoctorInformation",
+    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+  },
+];
 const ProjectList = () => {
   const [tableData, setTableData] = useState([]);
   const [openModal, setOpenModal] = useState(false);
@@ -122,7 +211,6 @@ const ProjectList = () => {
   return (
     <Card className="m-3 p-2">
       <CardHeader>
-        <CardTitle className="text-center">My Project</CardTitle>
         <Button className="float-right" onClick={(e) => handleModalOpen(e)}>
           Add Project
         </Button>
@@ -212,16 +300,16 @@ const ProjectList = () => {
             </tr>
           </thead>
           <tbody>
-            {tableData?.map((project, index) => (
+            {myProject?.map((project, index) => (
               <tr key={project.id}>
-                <td>{project.projectName}</td>
+                <td>{index + 1}.</td>
+                <td>{project.name}</td>
                 <td>{project.description}</td>
                 <td>{project.projectLink}</td>
-                <td>{project.technology.map((m) => m.name).toString(", ")}</td>
+                <td>{project.technology.toString(", ")}</td>
                 <td>
                   <Button
-                    className="mr-1"
-                    style={{ marginRight: "1px" }}
+                    className=" bg-primary"
                     onClick={() => {
                       handleEditFormOpen(project);
                     }}
@@ -233,7 +321,7 @@ const ProjectList = () => {
                     onClick={() => {
                       handleDeleteProject(project.id);
                     }}
-                    className="ml-2"
+                    className="bg-danger"
                   >
                     Delete
                   </Button>

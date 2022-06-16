@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/no-distracting-elements */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Button,
-  Card,
   CardBody,
   CardImg,
   CardSubtitle,
@@ -64,13 +65,13 @@ const Home = () => {
         </marquee>
       </div>
 
-      <Card style={{ margin: "0 40px" }}>
+      <div>
         <CardTitle className="text-center"></CardTitle>
         <CardBody>
           <Row>
             <Col lg={6} sm={6} md={6} xs={6} xl={6}>
               <Row>
-                <Col lg={6} sm={6} md={6} xs={6} xl={6}>
+                <Col lg={6} sm={12} md={12} xs={12} xl={6}>
                   {/* <img src={proImg} height="200px" width="200px" alt="Image" /> */}
                   <CardImg
                     id="profile"
@@ -103,17 +104,17 @@ const Home = () => {
                       <ul>
                         <li>
                           <a href="#">
-                            <i class="fab fa-facebook-f"></i>
+                            <i className="fab fa-facebook-f"></i>
                           </a>
                         </li>{" "}
                         <li>
                           <a href="#">
-                            <i class="fab fa-twitter"></i>
+                            <i className="fab fa-twitter"></i>
                           </a>
                         </li>{" "}
                         <li>
                           <a href="#">
-                            <i class="fab fa-instagram"></i>
+                            <i className="fab fa-instagram"></i>
                           </a>
                         </li>{" "}
                         <li>
@@ -122,7 +123,7 @@ const Home = () => {
                             target="_blank"
                             rel="noreferrer"
                           >
-                            <i class="fab fa-linkedin-in"></i>
+                            <i className="fab fa-linkedin-in"></i>
                           </a>
                         </li>{" "}
                         <li>
@@ -131,19 +132,19 @@ const Home = () => {
                             target="_blank"
                             rel="noreferrer"
                           >
-                            <i class="fab fa-github"></i>
+                            <i className="fab fa-github"></i>
                           </a>
                         </li>
                         <li>
                           <a href="#">
-                            <i class="fab fa-youtube"></i>
+                            <i className="fab fa-youtube"></i>
                           </a>
                         </li>
                       </ul>
                     </nav>
                   </div>
                 </Col>
-                <Col lg={6} sm={6} md={6} xs={6} xl={6}>
+                <Col lg={6} sm={12} md={12} xs={12} xl={6}>
                   <p id="profileContent">
                     As-salamu alaikum(ٱلسَّلَامُ عَلَيْكُمْ) .I am Alamgir
                     Kabir.I am a Web Developer.I Complete my graduation from
@@ -167,12 +168,12 @@ const Home = () => {
                         </ul>
                       </div>
                       <div>
-                        <ol>
+                        <ul>
                           <li>NodeJs</li>
                           <li>ExpressJs</li>
                           <li>Asp.Net Core Web Api</li> <li>MongoDB</li>
                           <li>JsonDB</li>
-                        </ol>
+                        </ul>
                       </div>
                     </div>
                   </p>
@@ -181,9 +182,9 @@ const Home = () => {
             </Col>{" "}
             <Col
               lg={6}
-              sm={6}
-              md={6}
-              xs={6}
+              sm={12}
+              md={12}
+              xs={12}
               xl={6}
               className="text-black"
               id="contactForm"
@@ -280,7 +281,7 @@ const Home = () => {
             </div>
 
             <Row id="skillDiv">
-              <Col lg={2} sm={2} md={2} xs={2}>
+              <Col lg={2} sm={6} md={6} xs={6}>
                 <ul className="skillList">
                   <li>HTML</li>
                   <li>CSS3</li>
@@ -288,23 +289,23 @@ const Home = () => {
                   <li>Material UI</li>
                 </ul>
               </Col>{" "}
-              <Col lg={2} sm={2} md={2} xs={2}>
+              <Col lg={2} sm={6} md={6} xs={6}>
                 <ul className="skillList">
                   <li>Javascript</li>
-                  <li>ReactJs</li>
                   <li>NodeJs</li>
                   <li>ExpressJs</li>
+                  <li>ReactJs</li>
                 </ul>
               </Col>
-              <Col lg={2} sm={2} md={2} xs={2}>
+              <Col lg={2} sm={6} md={6} xs={6}>
                 <ul className="skillList">
+                  <li>AngularJS</li>
                   <li>Angular</li>
-                  <li>XML</li>
                   <li>SQL</li>
                   <li>MongoDB</li>
                 </ul>
               </Col>{" "}
-              <Col lg={2} sm={2} md={2} xs={2}>
+              <Col lg={2} sm={6} md={6} xs={6}>
                 <ul className="skillList">
                   <li>C#</li>
                   <li>ASP.NET</li>
@@ -312,56 +313,50 @@ const Home = () => {
                   <li>ASP.NET CORE</li>
                 </ul>
               </Col>{" "}
-              <Col lg={2} sm={2} md={2} xs={2}>
+              <Col lg={2} sm={6} md={6} xs={6}>
                 <ul className="skillList">
                   <li>ASP.NET CORE WEB API</li>
                   <li>WCF</li>
-                  <li>AngularJs</li>
                   <li>UML</li>
+                  <li>XML</li>
                 </ul>
               </Col>{" "}
-              <Col lg={2} sm={2} md={2} xs={2}>
-                <ul className="skillList">
-                  <li>UML</li>
-                  <li>ASP.NET</li>
-                  <li>ASP.NET MVC</li>
-                  <li>ASP.NET CORE</li>
+              <Col lg={2} sm={6} md={6} xs={6}>
+                <ul className="skillList text-nowrap">
+                  <li style={{ fontFamily: "monospace" }}>PROJECT LIST</li>
+                  <li>
+                    <a
+                      href="http://192.168.0.29/nasir/erp-production/-/tree/alamgir"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Garments ERP
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/alamgirkabir45789/AspDotNetMvcProject_Alamgir"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      HOSPITAL MANAGEMENT
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/alamgirkabir45789/ETicket"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      E-TICKET
+                    </a>
+                  </li>
                 </ul>
               </Col>{" "}
-              {/* <Col lg={6} sm={6} md={6} xs={6}>
-                <div className="skill-div">
-                  <ul>
-                    <li className="html">HTML</li>
-                    <li className="css3">CSS3</li>
-                    <li className="bootstrap">Bootstrap</li>
-                    <li className="materialUI">Material UI</li>
-                    <li className="javascript">Javascript</li>
-                    <li className="reactJs">ReactJs</li>{" "}
-                    <li className="nodejs">NodeJs</li>
-                    <li className="expressJs">ExpressJs</li>{" "}
-                    <li className="angular">Angular</li>{" "}
-                    <li className="xml">XML</li>{" "}
-                  </ul>
-                </div>
-              </Col>
-              <Col lg={6} sm={6} md={6} xs={6}>
-                <div className="skill-div2">
-                  <li className="sql">SQL</li>
-                  <li className="c-sharp">C#</li>
-                  <li className="aspNet">ASP.NET</li>{" "}
-                  <li className="mvc">ASP.NET MVC</li>
-                  <li className="core">ASP.NET CORE</li>{" "}
-                  <li className="api">ASP.NET CORE WEB API</li>{" "}
-                  <li className="wcf">WCF</li>
-                  <li className="mongodb">MongoDB</li>
-                  <li className="angularJs">AngularJs</li>
-                  <li className="uml">UML</li>
-                </div>
-              </Col> */}
             </Row>
           </div>
         </CardBody>
-      </Card>
+      </div>
     </div>
   );
 };

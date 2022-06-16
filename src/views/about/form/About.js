@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import { Card } from "reactstrap";
 import profileImage from "../../../assets/images/AlamgirSmallSizePP.jpg";
 import "../../../css/About.css";
 const About = () => {
   return (
     <div>
-      <Card>
+      <div>
         {/* container start */}
         <div className="container">
           {/* header start */}
@@ -24,7 +23,13 @@ const About = () => {
                 </a>
               </p>
               <p>
-                <a href="#">Website: Alamgir's Documentary</a>
+                <a
+                  href="https://kabiralamgir.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Website: Alamgir's Documentary
+                </a>
               </p>
               <p>
                 <a href="tel:+881745425498">Phone: +881745425498</a>
@@ -252,7 +257,7 @@ const About = () => {
           {/* footer end */}
         </div>
         {/* container end */}
-      </Card>
+      </div>
     </div>
   );
 };

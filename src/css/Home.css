@@ -21,21 +21,24 @@
   transition: font-size 2s;
 }
 .skillList li {
-  color: white;
+  color: #703535;
   margin: 10px;
   padding: 5px;
   /* background-color: violet; */
   /* background-image: linear-gradient(green, red, yellow); */
-  background-color: #252641;
+  /* background-color: #6c757d; */
   text-align: center;
   border-radius: 5px;
   list-style-type: none;
+  text-align: left;
 }
 .skillList li:hover {
-  color: rgb(49, 221, 72);
+  /* color: #ffffff; */
   font-size: 20px;
   animation-duration: 5s;
-  background-color: black;
+  /* text-align: center; */
+  /* background-color: cadetblue */
+  
 }
 #project-link {
   font-size: large;
