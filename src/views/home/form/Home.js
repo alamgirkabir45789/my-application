@@ -69,9 +69,9 @@ const Home = () => {
         <CardTitle className="text-center"></CardTitle>
         <CardBody>
           <Row>
-            <Col lg={6} sm={6} md={6} xs={6} xl={6}>
+            <Col lg={6} sm={12} md={12} xs={12} xl={6}>
               <Row>
-                <Col lg={6} sm={12} md={12} xs={12} xl={6}>
+                <Col lg={6} sm={6} md={6} xs={12} xl={6}>
                   {/* <img src={proImg} height="200px" width="200px" alt="Image" /> */}
                   <CardImg
                     id="profile"
@@ -144,7 +144,7 @@ const Home = () => {
                     </nav>
                   </div>
                 </Col>
-                <Col lg={6} sm={12} md={12} xs={12} xl={6}>
+                <Col lg={6} sm={6} md={6} xs={12} xl={6}>
                   <p id="profileContent">
                     As-salamu alaikum(ٱلسَّلَامُ عَلَيْكُمْ) .I am Alamgir
                     Kabir.I am a Web Developer.I Complete my graduation from
@@ -281,7 +281,7 @@ const Home = () => {
             </div>
 
             <Row id="skillDiv">
-              <Col lg={2} sm={6} md={6} xs={6}>
+              <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList">
                   <li>HTML</li>
                   <li>CSS3</li>
@@ -289,7 +289,7 @@ const Home = () => {
                   <li>Material UI</li>
                 </ul>
               </Col>{" "}
-              <Col lg={2} sm={6} md={6} xs={6}>
+              <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList">
                   <li>Javascript</li>
                   <li>NodeJs</li>
@@ -297,7 +297,7 @@ const Home = () => {
                   <li>ReactJs</li>
                 </ul>
               </Col>
-              <Col lg={2} sm={6} md={6} xs={6}>
+              <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList">
                   <li>AngularJS</li>
                   <li>Angular</li>
@@ -305,7 +305,7 @@ const Home = () => {
                   <li>MongoDB</li>
                 </ul>
               </Col>{" "}
-              <Col lg={2} sm={6} md={6} xs={6}>
+              <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList">
                   <li>C#</li>
                   <li>ASP.NET</li>
@@ -313,7 +313,7 @@ const Home = () => {
                   <li>ASP.NET CORE</li>
                 </ul>
               </Col>{" "}
-              <Col lg={2} sm={6} md={6} xs={6}>
+              <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList">
                   <li>ASP.NET CORE WEB API</li>
                   <li>WCF</li>
@@ -321,7 +321,7 @@ const Home = () => {
                   <li>XML</li>
                 </ul>
               </Col>{" "}
-              <Col lg={2} sm={6} md={6} xs={6}>
+              <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList text-nowrap">
                   <li style={{ fontFamily: "monospace" }}>PROJECT LIST</li>
                   <li>
