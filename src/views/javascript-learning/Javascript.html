@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./DOM.js" defer="true"></script>
+  </head>
+  <body>
+    <div id="width"></div>
+    <div id="height"></div>
+    <input type="submit" value="Open Window" id="openWindow" onclick="openWindow()" >
+    <input type="submit" value="Close Window" id="closeWindow" onclick="closeWindow()" >
+    <div id="myDiv">
+
+      <button id="eventListn">Click Me</button>
+      <p>Welcome To Bangladesh</p>
+    </div>
+    <p id="mouseOver" onmouseover="this.innerHTML='Welcome'" onmouseout="this.innerHTML='Thank You'">Bangladesh</p>
+    <button id="displayDate">Click</button>
+    <h2 id="welcome" onmouseover="designMe(this)">Welcome</h2>
+    <h2 id="design">Hello World</h2>
+    <button onclick="changeMe()">Change Me</button>
+    <input type="text" id="num">
+    <button type="submit" onclick="submitNum()">Submit</button>
+    <p id="show"></p>
+    <form action="" name="myForm" method="post" onsubmit="return validateForm()">
+      Name:<input type="text" name="name"/>
+      <input type="submit" value="Submit"/>
+    </form>
+    <p id="date">Today</p>
+    <img id="myImg" src="../../assets/images/pic1.png" alt="">
+    <form id="frm1" action="/action_page.php">
+      First name: <input type="text" name="fname" value="Ali"><br>
+      Last name: <input type="text" name="lname" value="Hossain"><br><br>
+      <input type="submit" value="Submit">
+    </form> 
+    <form id="frm2" action="/action_page.php">
+      First name: <input type="text" name="fname" value="Ali"><br>
+      Last name: <input type="text" name="lname" value="Hossain"><br><br>
+      <input type="submit" value="Submit">
+    </form> 
+    
+    <p>These are the values of each element in the form:</p>
+    
+    <p id="demo"></p>
+  </body>
+</html>

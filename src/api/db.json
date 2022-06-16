@@ -1,0 +1,98 @@
+{
+  "projectList": [
+    {
+      "id": 94,
+      "projectName": "E-Ticket System",
+      "description": "This project create for Bus Ticketing .",
+      "projectLink": "https://github.com/alamgirkabir45789/ETicket",
+      "technology": [
+        {
+          "id": 22,
+          "name": "HTML"
+        },
+        {
+          "id": 252,
+          "name": "CSS"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "projectName": "jkjk",
+      "description": "jkjk",
+      "projectLink": "jkjk",
+      "technology": [
+        "kjkjk",
+        "khiui"
+      ]
+    }
+  ],
+  "member": [
+    {
+      "id": 12,
+      "name": "Jamal"
+    },
+    {
+      "id": 62,
+      "name": "sdfdf"
+    }
+  ],
+  "meal": [
+    {
+      "id": 112,
+      "name": "Morning",
+      "menu": [
+        {
+          "id": 52,
+          "menuName": "Porota",
+          "price": 20
+        },
+        {
+          "id": 582,
+          "menuName": "Biriani",
+          "price": 240
+        }
+      ]
+    },
+    {
+      "id": 527,
+      "name": "Evening",
+      "menu": [
+        {
+          "id": 582,
+          "menuName": "Porota",
+          "price": 20
+        },
+        {
+          "id": 5892,
+          "menuName": "Biriani",
+          "price": 240
+        }
+      ]
+    }
+  ],
+  "mealList": [
+    {
+      "id": 32,
+      "mealStatus": true,
+      "memberName": "Jamal",
+      "date": "10-02-2022",
+      "morning": 1,
+      "noon": 1,
+      "night": 1,
+      "dayTotalMeal": 3,
+      "dailyExpence": 0
+    },
+    {
+      "id": 352,
+      "mealStatus": true,
+      "memberName": "Kamal",
+      "date": "10-02-2022",
+      "morning": 1,
+      "noon": 1,
+      "night": 1,
+      "dayTotalMeal": 3,
+      "dailyExpence": 0
+    }
+  ]
+}

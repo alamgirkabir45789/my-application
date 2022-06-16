@@ -1,13 +1,12 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import "./App.css";
+import React from "react";
 import Router from "./router/Router";
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
+    <div>
       <Router />
     </div>
   );
-}
+};
 
 export default App;
