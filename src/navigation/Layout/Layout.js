@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import {
   DropdownItem,
@@ -9,8 +8,8 @@ import {
 import "../../css/Layout.css";
 const Layout = () => {
   return (
-    <div>
-      <nav className="nav justify-content-center">
+    <div style={{ fontFamily: "fangsong" }}>
+      <nav className="nav justify-content-center ">
         <ul className="nav ">
           <li className="nav-item">
             <Link className="nav-link active" to="/">
@@ -37,10 +36,32 @@ const Layout = () => {
               Cascade
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link className="nav-link" to="/mess">
               Hotel
             </Link>
+          </li> */}
+          <li className="dropdown">
+            <Link className="nav-link " to="/mess">
+              Hotel
+            </Link>
+            <ul class="dropdown-menu">
+              <li>
+                <Link className="nav-link " to="/mess">
+                  Link-1
+                </Link>{" "}
+              </li>
+              <li>
+                <Link className="nav-link " to="/mess">
+                  Hotel
+                </Link>{" "}
+              </li>
+              <li>
+                <Link className="nav-link " to="/mess">
+                  Hotel
+                </Link>{" "}
+              </li>
+            </ul>
           </li>
           <li>
             <Link className="nav-link" to="/product">
@@ -48,9 +69,7 @@ const Layout = () => {
             </Link>
           </li>
           <UncontrolledDropdown inNavbar nav>
-            <DropdownToggle caret nav>
-              Customer
-            </DropdownToggle>
+            <DropdownToggle nav>Customer</DropdownToggle>
             <DropdownMenu end>
               <DropdownItem>
                 <Link className="nav-link" to="/customer">

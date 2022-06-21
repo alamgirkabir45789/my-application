@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-expressions */
 import axios from "axios";
 import _ from "lodash";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Printer } from "react-feather";
 import {
   Button,
   Card,
@@ -14,22 +15,21 @@ import {
   Table,
 } from "reactstrap";
 import CustomModal from "../../../utility/customComponent/CustomModal";
-
 const myProject = [
   {
     id: 13,
     name: "Garments ERP Project - Front End: React JS(Production)",
-    description: "ReactJs Application",
+    description: "This is a ERP Application of Garments",
     projectLink:
       "https://bitbucket.org/rdmerp/erp_production/src/master/ or http://192.168.0.29/nasir/erp-production/-/tree/alamgir",
-    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+    technology: ["Reactjs", "Redux", "HTML", "CSS", "Bootstrap", "ReactStrap"],
   },
   {
     id: 12,
     name: "Garments ERP Project - Front End: React JS(Merchandising)",
-    description: "ReactJs Application",
+    description: "This is a ERP Application of Garments",
     projectLink: "https://bitbucket.org/rdmerp/quadrion.erp/src/alamgir/UI/",
-    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+    technology: ["Reactjs", "Redux", "HTML", "CSS", "Bootstrap", "ReactStrap"],
   },
   {
     id: 11,
@@ -40,66 +40,73 @@ const myProject = [
   },
   {
     id: 1,
-    name: "C#",
-    description: "ReactJs Application",
+    name: "C# Practice Project",
+    description: "C# Practice Project",
     projectLink: "https://github.com/alamgirkabir45789/ExamProject",
-    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+    technology: ["C#"],
+  },
+  {
+    id: 15,
+    name: "E-TICKET",
+    description: "E-TICKET SYSTEM",
+    projectLink: "https://github.com/alamgirkabir45789/ExamProject",
+    technology: ["ASP.NET CORE", "HTML", "CSS", "Bootstrap"],
   },
   {
     id: 2,
-    name: "ASP.NET CORE",
-    description: "ReactJs Application",
+    name: "Hospital Management Project",
+    description: "This is a ASP.Net Cor Project",
     projectLink: "https://github.com/alamgirkabir45789/CoreProject_Alamgir",
-    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+    technology: ["Asp.Net Core", "HTML", "CSS", "Bootstrap"],
   },
   {
     id: 3,
-    name: "ASP.NET MVC(CodeFast)",
-    description: "ReactJs Application",
+    name: "Hospital Management Project",
+    description: "This is a ASP.NET MVC(CodeFast)",
     projectLink:
       "https://github.com/alamgirkabir45789/MvcCodeFastProject_Alamgir",
-    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+    technology: ["ASP.NET MVC", "HTML", "CSS", "Bootstrap"],
   },
   {
     id: 4,
-    name: "ASP.NET MVC(DatabaseFast)",
-    description: "ReactJs Application",
+    name: "Hospital Management Project",
+    description: "This is a ASP.NET MVC(DatabaseFast)",
     projectLink:
       "https://github.com/alamgirkabir45789/AspDotNetMvcProject_Alamgir",
-    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+    technology: ["ASP.NET MVC", "SQL", "HTML", "CSS", "Bootstrap"],
   },
   {
     id: 5,
-    name: "ASP.NET WEB FORM",
-    description: "ReactJs Application",
+    name: "Hospital Management Project",
+    description: "This is a ASP.NET WEB FORM",
     projectLink: "https://github.com/alamgirkabir45789/Asp_Project_Alamgir",
-    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+    technology: ["ASP.NET WEB FORM", "HTML", "CSS", "Bootstrap"],
   },
   {
     id: 6,
     name: "MSSQL",
-    description: "ReactJs Application",
+    description: "Thi is a SQL PROJECT",
     projectLink: "https://github.com/alamgirkabir45789/SqlProject",
-    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+    technology: ["SQL"],
   },
   {
     id: 7,
-    name: "SignalR",
-    description: "ReactJs Application",
+    name: "Real Time Chat Application Application",
+    description: "This is a SignalR Project",
     projectLink: "https://github.com/alamgirkabir45789/SignalRProject_Alamgir",
-    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+    technology: ["Asp.Net Core", "SignalR", "HTML", "CSS", "Bootstrap"],
   },
   {
     id: 8,
-    name: "ASP.NET WEB API",
-    description: "ReactJs Application",
+    name: "School Management Project",
+    description: "This is a ASP.NET WEB API Project",
     projectLink: "https://github.com/alamgirkabir45789/SmsCoreApi",
-    technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
+    technology: ["ASP.NET WEB API"],
   },
   {
     id: 9,
     name: "Chat Application - NodeJs",
-    description: "ReactJs Application",
+    description: "This is a Nodejs Application",
     projectLink: "https://github.com/alamgirkabir45789/DoctorInformation",
     technology: ["Reactjs", "NodeJs", "HTML", "CSS", "Bootstrap"],
   },
@@ -210,10 +217,18 @@ const ProjectList = () => {
 
   return (
     <Card className="m-3 p-2">
-      <CardHeader>
-        <Button className="float-right" onClick={(e) => handleModalOpen(e)}>
+      <CardHeader className="d-flex justify-content-between">
+        <Button onClick={(e) => handleModalOpen(e)} className="bg-primary">
           Add Project
         </Button>
+        <Button id="print" className="bg-primary">
+          <Printer id="print" size={18} />
+        </Button>
+        {/* <PDFDownloadLink document={<MyDocument />} fileName="somename.pdf">
+          {({ blob, url, loading, error }) =>
+            loading ? "Loading document..." : "Download now!"
+          }
+        </PDFDownloadLink> */}
       </CardHeader>
       <CardBody>
         <CustomModal
@@ -274,6 +289,7 @@ const ProjectList = () => {
               <thead>
                 <tr>
                   <th>#</th>
+
                   <th>Technology</th>
                 </tr>
               </thead>
@@ -292,6 +308,7 @@ const ProjectList = () => {
         <Table>
           <thead>
             <tr>
+              <th>SL</th>
               <th>Name</th>
               <th>Description</th>
               <th>Github/Bitbucket/GitLab Link</th>
@@ -305,7 +322,15 @@ const ProjectList = () => {
                 <td>{index + 1}.</td>
                 <td>{project.name}</td>
                 <td>{project.description}</td>
-                <td>{project.projectLink}</td>
+                <td>
+                  <a
+                    href={project.projectLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {project.projectLink}
+                  </a>
+                </td>
                 <td>{project.technology.toString(", ")}</td>
                 <td>
                   <Button

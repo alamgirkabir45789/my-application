@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-distracting-elements */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Button,
@@ -17,7 +17,6 @@ import {
 } from "reactstrap";
 import proImg from "../../../assets/images/AlamgirSmallSizePP.jpg";
 import "../../../css/Home.css";
-
 const initialState = {
   id: 0,
   firstName: "",
@@ -31,7 +30,6 @@ const Home = () => {
   let navigate = useNavigate();
   const [state, setState] = useState(initialState);
   const [tableData, setTableData] = useState("");
-  console.log(tableData);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,6 +55,13 @@ const Home = () => {
     console.log(prevState);
     setState(prevState);
   };
+  // if (initialState) {
+  //   return (
+  //     <div>
+  //       <CustomPreLoader />
+  //     </div>
+  //   );
+  // }
   return (
     <div>
       <div style={{ color: "#000B49", textTransform: "uppercase" }}>
@@ -329,6 +334,7 @@ const Home = () => {
                       href="http://192.168.0.29/nasir/erp-production/-/tree/alamgir"
                       target="_blank"
                       rel="noreferrer"
+                      style={{ textDecoration: "none" }}
                     >
                       Garments ERP
                     </a>
@@ -338,6 +344,7 @@ const Home = () => {
                       href="https://github.com/alamgirkabir45789/AspDotNetMvcProject_Alamgir"
                       target="_blank"
                       rel="noreferrer"
+                      style={{ textDecoration: "none" }}
                     >
                       HOSPITAL MANAGEMENT
                     </a>
@@ -347,6 +354,7 @@ const Home = () => {
                       href="https://github.com/alamgirkabir45789/ETicket"
                       target="_blank"
                       rel="noreferrer"
+                      style={{ textDecoration: "none" }}
                     >
                       E-TICKET
                     </a>

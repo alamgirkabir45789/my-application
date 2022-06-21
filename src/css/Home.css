@@ -1,6 +1,10 @@
 #profile {
-  border-radius: 50%;
-  border: 1px ridge green;
+  box-sizing: border-box;
+  box-shadow: 5px 2px 20px black;
+  border-radius: 10%;
+  /* border: 1px ridge green; */
+  border: 1px solid #ddd;
+  padding: 5px;
   height: 200px;
   width: 200px;
   transition: width 2s, height 4s, border 2s;

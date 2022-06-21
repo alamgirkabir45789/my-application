@@ -31,3 +31,14 @@
   animation-duration: 2s;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+/* For hover dropdown */
+.dropdown:hover .dropdown-menu {
+  display: block;
+
+}
+.navbar-nav > li {
+  top: -2px;
+}
+.navbar-nav > li > a:hover {
+  border-top: 2px solid #F68220;
+}
