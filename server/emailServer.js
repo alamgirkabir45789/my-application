@@ -1,50 +1,52 @@
-const path = require("path");
 const express = require("express");
-
 const nodemailer = require("nodemailer");
-const app = express();
 const cors = require("cors");
-app.use(cors());
-const buildPath = path.join(__dirname, "..", "build");
-app.use(express.json());
-app.use(express.static(buildPath));
+const bodyParser = require("body-parser");
+// instantiate an express app
+const app = express();
+// support parsing of application/json type post data
+app.use(bodyParser.json());
+//support parsing of application/x-www-form-urlencoded post data
+app.use(bodyParser.urlencoded({ extended: true }));
+// cors
+app.use(cors({ origin: "*" }));
+const PORT = process.env.PORT || 5005;
 
-app.post("/users", (req, res) => {
-  var transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "1257363alamgir@gmail.com",
-      pass: "a01537082561k",
-    },
-  });
+app.get("/", function (req, res) {
+  res.send("<html><body><h1>Hello World</h1></body></html>");
+});
 
-  var mailOptions = {
-    from: "1257363alamgir@gmail.com", // sender address
-    to: req.body.to, // list of receivers
-    subject: req.body.subject, // Subject line
-    text: req.body.description,
-    html: `
-        <div style="padding:10px;border-style: ridge">
-        <p>You have a new contact request.</p>
-        <h3>Contact Details</h3>
-        <ul>
-            <li>Email: ${req.body.to}</li>
-            <li>Subject: ${req.body.subject}</li>
-            <li>Message: ${req.body.description}</li>
-        </ul>
-        `,
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "alamgirkabir45789@gmail.com",
+    pass: "ycwcvasuzrebhims",
+  },
+});
+app.post("/send", (req, res) => {
+  // console.log(req.body);
+  // res.send("response");
+  const mail = {
+    sender: `${req.body.firstName + req.body.lastName} <${req.body.email}>`,
+    to: "alamgirkabir45789@gmail.com", // receiver email,
+
+    // phone: req.body.phone,
+    subject: req.body.subject,
+    text: `${req.body.firstName + req.body.lastName} <${req.body.email}> \n${
+      req.body.message
+    }`,
   };
-
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      res.json({ status: true, respMesg: "Email Sent Successfully" });
+  transporter.sendMail(mail, (err, info) => {
+    if (err) {
+      res.status(500).send("Something went wrong.");
     } else {
-      res.json({ status: true, respMesg: "Email Sent Successfully" });
+      res.status(200).send("Email successfully sent to recipient!");
     }
   });
 });
 
-// listen to the port
-app.listen(5000, () => {
-  console.log("server start on port 3030");
+/*************************************************/
+// Express server listening...
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}...`);
 });

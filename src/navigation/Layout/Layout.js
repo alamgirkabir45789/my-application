@@ -77,8 +77,8 @@ const Layout = () => {
                 </Link>
               </DropdownItem>
               <DropdownItem>
-                <Link className="nav-link" to="/about">
-                  About
+                <Link className="nav-link" to="/mail">
+                  Mail
                 </Link>
               </DropdownItem>
               <DropdownItem divider />

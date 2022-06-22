@@ -1,4 +1,3 @@
-import React from "react";
 import { RouteObject, useRoutes } from "react-router-dom";
 import Layout from "../navigation/Layout/Layout";
 import About from "../views/about/form/About";
@@ -11,6 +10,7 @@ import Home from "../views/home/form/Home";
 import Mess from "../views/mess/home/list";
 import Product from "../views/product/list";
 import Project from "../views/project/list";
+import EmailSend from "../views/test/EmailPage";
 
 const Router = () => {
   let routes: RouteObject[] = [
@@ -44,10 +44,10 @@ const Router = () => {
           path: "/product",
           element: <Product />,
         },
-        // {
-        //   path: "/customer",
-        //   element: <Customer />,
-        // },
+        {
+          path: "/mail",
+          element: <EmailSend />,
+        },
         {
           path: "/register",
           element: <Register />,

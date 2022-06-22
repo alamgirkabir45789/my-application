@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import { useState } from "react";
 import { Button, Card, Col, FormGroup, Input, Label } from "reactstrap";
 import "../../../css/Home.css";
 const initialState = {
@@ -7,7 +8,7 @@ const initialState = {
   lastName: "",
   email: "",
   phone: "",
-  address: "",
+  subject: "",
   message: "",
 };
 const ContactForm = () => {
@@ -15,7 +16,7 @@ const ContactForm = () => {
   const [tableData, setTableData] = useState("");
   console.log(tableData);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (state.id === 0) {
       const submitData = {
@@ -24,10 +25,24 @@ const ContactForm = () => {
         lastName: state.lastName,
         email: state.email,
         phone: state.phone,
-        address: state.address,
+        subject: state.subject,
         message: state.message,
       };
+
       console.log(submitData);
+      await axios
+        .post("http://localhost:5005/send", submitData)
+        .then(function (response) {
+          console.log(response);
+          if (response.status === 200) {
+            alert("Data Submitted");
+          } else {
+            alert("Data not submitted");
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       setTableData(...tableData, submitData);
     }
   };
@@ -84,12 +99,12 @@ const ContactForm = () => {
           />
         </FormGroup>
         <FormGroup tag={Col} lg={12} sm={12} md={12} xs={12}>
-          <Label htmlFor="address">Address</Label>
+          <Label htmlFor="subject">subject</Label>
           <Input
             type="text"
-            name="address"
-            id="address"
-            value={state.address}
+            name="subject"
+            id="subject"
+            value={state.subject}
             onChange={handleInputChange}
           />
         </FormGroup>{" "}

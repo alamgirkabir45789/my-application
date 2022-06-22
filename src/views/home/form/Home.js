@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/no-distracting-elements */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -23,7 +24,8 @@ const initialState = {
   lastName: "",
   email: "",
   phone: "",
-  address: "",
+
+  subject: "",
   message: "",
 };
 const Home = () => {
@@ -31,7 +33,7 @@ const Home = () => {
   const [state, setState] = useState(initialState);
   const [tableData, setTableData] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (state.id === 0) {
       const submitData = {
@@ -40,10 +42,25 @@ const Home = () => {
         lastName: state.lastName,
         email: state.email,
         phone: state.phone,
-        address: state.address,
+
+        subject: state.subject,
         message: state.message,
       };
       console.log(submitData);
+      await axios
+        .post("http://localhost:5005/send", submitData)
+        .then(function (response) {
+          console.log(response);
+          if (response.status === 200) {
+            alert("Data Submitted");
+            setState(initialState);
+          } else {
+            alert("Data not submitted");
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       setTableData(...tableData, submitData);
     }
   };
@@ -95,7 +112,9 @@ const Home = () => {
                     <CardSubtitle className="mb-2 text-muted " tag="h6">
                       Quadrion Technologies,Chittagong
                     </CardSubtitle>
-                    <CardText>This is a wider card with</CardText>
+                    <CardText className="mb-2 text-muted " tag="h6">
+                      Contact No:01892-950630
+                    </CardText>
                     <Button
                       id="project-link"
                       onClick={() => navigate("/project")}
@@ -168,15 +187,13 @@ const Home = () => {
                           <li>HTML</li>
                           <li>CSS3</li>
                           <li>Bootstrap</li> <li>ReactJs</li>
-                          <li>Javascript</li>
-                          <li>ES6</li>
                         </ul>
                       </div>
                       <div>
                         <ul>
+                          <li>Javascript</li>
                           <li>NodeJs</li>
                           <li>ExpressJs</li>
-                          <li>Asp.Net Core Web Api</li> <li>MongoDB</li>
                           <li>JsonDB</li>
                         </ul>
                       </div>
@@ -241,13 +258,12 @@ const Home = () => {
                   />
                 </FormGroup>
                 <FormGroup tag={Col} lg={12} sm={12} md={12} xs={12}>
-                  <Label htmlFor="address">Address</Label>
+                  <Label htmlFor="subject">subject</Label>
                   <Input
-                    bsSize="sm"
                     type="text"
-                    name="address"
-                    id="address"
-                    value={state.address}
+                    name="subject"
+                    id="subject"
+                    value={state.subject}
                     onChange={handleInputChange}
                   />
                 </FormGroup>{" "}
@@ -291,23 +307,20 @@ const Home = () => {
                   <li>HTML</li>
                   <li>CSS3</li>
                   <li>Bootstrap</li>
-                  <li>Material UI</li>
                 </ul>
               </Col>{" "}
               <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList">
                   <li>Javascript</li>
-                  <li>NodeJs</li>
-                  <li>ExpressJs</li>
                   <li>ReactJs</li>
+                  <li>NodeJs</li>
                 </ul>
               </Col>
               <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList">
-                  <li>AngularJS</li>
                   <li>Angular</li>
+                  <li>AngularJS</li>
                   <li>SQL</li>
-                  <li>MongoDB</li>
                 </ul>
               </Col>{" "}
               <Col lg={2} sm={4} md={4} xs={6}>
@@ -315,14 +328,12 @@ const Home = () => {
                   <li>C#</li>
                   <li>ASP.NET</li>
                   <li>ASP.NET MVC</li>
-                  <li>ASP.NET CORE</li>
                 </ul>
               </Col>{" "}
               <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList">
-                  <li>ASP.NET CORE WEB API</li>
-                  <li>WCF</li>
-                  <li>UML</li>
+                  <li>ASP.NET CORE</li>
+                  <li>ASP.NET WEB API</li>
                   <li>XML</li>
                 </ul>
               </Col>{" "}
