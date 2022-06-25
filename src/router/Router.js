@@ -11,6 +11,7 @@ import Mess from "../views/mess/home/list";
 import Product from "../views/product/list";
 import Project from "../views/project/list";
 import EmailSend from "../views/test/EmailPage";
+import MyTestPage from "../views/test/MyTestPage";
 
 const Router = () => {
   let routes: RouteObject[] = [
@@ -47,6 +48,10 @@ const Router = () => {
         {
           path: "/mail",
           element: <EmailSend />,
+        },
+        {
+          path: "/test",
+          element: <MyTestPage />,
         },
         {
           path: "/register",

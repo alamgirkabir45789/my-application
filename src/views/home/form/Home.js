@@ -46,11 +46,9 @@ const Home = () => {
         subject: state.subject,
         message: state.message,
       };
-      console.log(submitData);
       await axios
-        .post("http://localhost:5005/send", submitData)
+        .post("https://nodecreacttestapp.herokuapp.com/send", submitData)
         .then(function (response) {
-          console.log(response);
           if (response.status === 200) {
             alert("Data Submitted");
             setState(initialState);
@@ -69,7 +67,6 @@ const Home = () => {
     const { name, value } = e.target;
     const prevState = { ...state };
     prevState[name] = value;
-    console.log(prevState);
     setState(prevState);
   };
   // if (initialState) {
@@ -239,7 +236,7 @@ const Home = () => {
                   <Label htmlFor="email">Email</Label>
                   <Input
                     bsSize="sm"
-                    type="text"
+                    type="email"
                     name="email"
                     id="email"
                     value={state.email}
@@ -250,7 +247,7 @@ const Home = () => {
                   <Label htmlFor="phone">Phone</Label>
                   <Input
                     bsSize="sm"
-                    type="text"
+                    type="number"
                     name="phone"
                     id="phone"
                     value={state.phone}

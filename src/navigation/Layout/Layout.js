@@ -90,8 +90,8 @@ const Layout = () => {
             </DropdownMenu>
           </UncontrolledDropdown>
           <li>
-            <Link className="nav-link disabled" to="">
-              Disabled
+            <Link className="nav-link " to="test">
+              Test
             </Link>
           </li>
         </ul>
