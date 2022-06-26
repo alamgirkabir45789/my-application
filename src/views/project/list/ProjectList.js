@@ -112,7 +112,7 @@ const myProject = [
   },
 ];
 const ProjectList = () => {
-  const [tableData, setTableData] = useState([]);
+  const [tableData, setTableData] = useState();
   const [openModal, setOpenModal] = useState(false);
   const [project, setProject] = useState({
     id: 0,
@@ -128,8 +128,8 @@ const ProjectList = () => {
   });
   const [techTable, setTechTable] = useState([]);
   const fetchProject = () => {
-    axios.get("http://localhost:5005/projectList").then((res) => {
-      const listData = res.data;
+    axios.get("http://localhost:5005/project").then((res) => {
+      const listData = res.data.flat();
       setTableData(listData);
     });
   };
@@ -317,7 +317,7 @@ const ProjectList = () => {
             </tr>
           </thead>
           <tbody>
-            {myProject?.map((project, index) => (
+            {tableData?.map((project, index) => (
               <tr key={project.id}>
                 <td>{index + 1}.</td>
                 <td>{project.name}</td>

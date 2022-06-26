@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import {
   Button,
   Card,
@@ -55,8 +55,8 @@ const mealDetails = [
 const Member = () => {
   //#region States
   const [state, setState] = useState({
-    id: 0,
-    name: "",
+    memberName: "",
+    contactNo: "",
   });
   const [active, setActive] = useState("1");
 
@@ -64,9 +64,9 @@ const Member = () => {
   const [mealList, setMealList] = useState([]);
   const [mealInfo, setMealInfo] = useState(mealDetails);
   const getMember = async () => {
-    const res = await axios.get("https://localhost:44321/Member");
-    console.log(res.data.data);
-    setMember(res.data);
+    const res = await axios.get("http://localhost:5005/member");
+    console.log(res.data.recordset);
+    setMember(res.data.recordset);
   };
   const getMeal = async () => {
     const res = await axios.get("http://localhost:5005/meal");
@@ -93,8 +93,8 @@ const Member = () => {
       });
     } else {
       await axios.post("http://localhost:5005/member/", {
-        id: Math.floor(Math.random() * 100),
-        name: state.name,
+        memberName: state.memberName,
+        contactNo: state.contactNo,
       });
     }
 
@@ -154,14 +154,16 @@ const Member = () => {
                 <tr>
                   <th>#</th>
                   <th>Name</th>
+                  <th>Contact No</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {member?.map((item, index) => (
-                  <tr key={item.id}>
+                  <tr key={item.MemberId}>
                     <td>{index + 1}</td>
-                    <td>{item.name}</td>
+                    <td>{item.MemberName}</td>
+                    <td>{item.ContactNo}</td>
                     <td>
                       <Button
                         className="bg-success mr-2"
