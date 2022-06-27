@@ -45,7 +45,7 @@ const Layout = () => {
             <Link className="nav-link " to="/mess">
               Hotel
             </Link>
-            <ul class="dropdown-menu">
+            <ul className="dropdown-menu">
               <li>
                 <Link className="nav-link " to="/mess">
                   Link-1

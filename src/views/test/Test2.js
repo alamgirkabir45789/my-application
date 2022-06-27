@@ -4,10 +4,10 @@ class Father {
     this.profession = profession;
   }
   get fName() {
-    return this.name
+    return this.name;
   }
-  set fName(name){
-      return this.name=name;
+  set fName(name) {
+    return (this.name = name);
   }
 }
 
@@ -24,5 +24,5 @@ class Children extends Father {
 const obj = new Children("Rahim", "Doctor", "Habib", 44);
 console.log(obj);
 console.log(obj.details());
-obj.fName="Shakib"
-console.log(obj.fName)
+obj.fName = "Shakib";
+console.log(obj.fName);

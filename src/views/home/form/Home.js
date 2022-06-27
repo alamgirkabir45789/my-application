@@ -166,7 +166,7 @@ const Home = () => {
                   </div>
                 </Col>
                 <Col lg={6} sm={6} md={6} xs={12} xl={6}>
-                  <p id="profileContent">
+                  <div id="profileContent">
                     As-salamu alaikum(ٱلسَّلَامُ عَلَيْكُمْ) .I am Alamgir
                     Kabir.I am a Web Developer.I Complete my graduation from
                     IDB-BISEW in{" "}
@@ -195,7 +195,7 @@ const Home = () => {
                         </ul>
                       </div>
                     </div>
-                  </p>
+                  </div>
                 </Col>
               </Row>
             </Col>{" "}
@@ -293,9 +293,6 @@ const Home = () => {
               <div id="skill">
                 <h2 style={{ color: "green" }}>My Skill</h2>
               </div>
-              {/* <div className="">
-                <h2>My Skill</h2>
-              </div> */}
             </div>
 
             <Row id="skillDiv">

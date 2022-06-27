@@ -1,6 +1,6 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
 import profileImage from "../../../assets/images/AlamgirSmallSizePP.jpg";
 import "../../../css/About.css";
 const About = () => {
@@ -11,7 +11,7 @@ const About = () => {
         <div className="container">
           {/* header start */}
           <header>
-            <img className="profile-image" src={profileImage} alt />
+            <img className="profile-image" src={profileImage} alt="No Image" />
             <div className="header-bio">
               <h1>Alamgir Kabir</h1>
               <h3>Web Developer</h3>

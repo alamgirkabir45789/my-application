@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-expressions */
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import axios from "axios";
 import _ from "lodash";
 import { useEffect, useState } from "react";
@@ -15,6 +16,7 @@ import {
   Table,
 } from "reactstrap";
 import CustomModal from "../../../utility/customComponent/CustomModal";
+import PDFViewer from "../reporting/PDFViewer";
 const myProject = [
   {
     id: 13,
@@ -221,14 +223,21 @@ const ProjectList = () => {
         <Button onClick={(e) => handleModalOpen(e)} className="bg-primary">
           Add Project
         </Button>
-        <Button id="print" className="bg-primary">
-          <Printer id="print" size={18} />
-        </Button>
-        {/* <PDFDownloadLink document={<MyDocument />} fileName="somename.pdf">
+
+        <PDFDownloadLink
+          document={<PDFViewer data={myProject} />}
+          fileName="somename.pdf"
+        >
           {({ blob, url, loading, error }) =>
-            loading ? "Loading document..." : "Download now!"
+            loading ? (
+              "Loading document..."
+            ) : (
+              <Button id="print" className="bg-primary">
+                <Printer id="print" size={18} />
+              </Button>
+            )
           }
-        </PDFDownloadLink> */}
+        </PDFDownloadLink>
       </CardHeader>
       <CardBody>
         <CustomModal
@@ -317,7 +326,7 @@ const ProjectList = () => {
             </tr>
           </thead>
           <tbody>
-            {tableData?.map((project, index) => (
+            {myProject?.map((project, index) => (
               <tr key={project.id}>
                 <td>{index + 1}.</td>
                 <td>{project.name}</td>

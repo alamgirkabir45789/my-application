@@ -5,6 +5,12 @@ const data = [
     sizeId: "a3996d2d-8425-4ce4-afe8-0a38dd76a608",
     sizeName: "M",
     balance: 2,
+    groups: [
+      {
+        groupName: "a",
+        groupRatio: 0,
+      },
+    ],
   },
   {
     id: "1ab19f66-fe28-4325-f3b6-08da54e10e60",
@@ -12,6 +18,12 @@ const data = [
     sizeId: "936e2546-4314-46a5-ad64-768a91dae80f",
     sizeName: "S",
     balance: 3,
+    groups: [
+      {
+        groupName: "a",
+        groupRatio: 0,
+      },
+    ],
   },
   {
     id: "335e6f1c-5433-4064-f3b7-08da54e10e60",
@@ -19,6 +31,12 @@ const data = [
     sizeId: "98bcec5d-23e8-4bbc-a23c-5a4c763da336",
     sizeName: "MS",
     balance: 1,
+    groups: [
+      {
+        groupName: "a",
+        groupRatio: 0,
+      },
+    ],
   },
   {
     id: "99e3488e-1275-4567-f3b8-08da54e10e60",
@@ -26,6 +44,12 @@ const data = [
     sizeId: "9c2a837e-9ce3-409b-a7d9-ce1bc4a11646",
     sizeName: "XL",
     balance: 1,
+    groups: [
+      {
+        groupName: "a",
+        groupRatio: 0,
+      },
+    ],
   },
 ];
-console.log(data[0]);
+console.log(data.map((d) => d.groups.flat(Infinity)));
