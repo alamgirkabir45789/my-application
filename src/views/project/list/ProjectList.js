@@ -234,6 +234,7 @@ const ProjectList = () => {
             ) : (
               <Button id="print" className="bg-primary">
                 <Printer id="print" size={18} />
+                Print
               </Button>
             )
           }

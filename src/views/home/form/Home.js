@@ -333,7 +333,12 @@ const Home = () => {
               </Col>{" "}
               <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList text-nowrap">
-                  <li style={{ fontFamily: "monospace" }}>PROJECT LIST</li>
+                  <li
+                    style={{ fontFamily: "monospace" }}
+                    className="text-dark font-weight-bold"
+                  >
+                    PROJECT LIST
+                  </li>
                   <li>
                     <a
                       href="http://192.168.0.29/nasir/erp-production/-/tree/alamgir"

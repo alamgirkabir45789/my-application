@@ -65,18 +65,16 @@ const Member = () => {
   const [mealInfo, setMealInfo] = useState(mealDetails);
   const getMember = async () => {
     const res = await axios.get("http://localhost:5005/member");
-    console.log(res.data.recordset);
     setMember(res.data.recordset);
   };
   const getMeal = async () => {
     const res = await axios.get("http://localhost:5005/meal");
-    console.log(res);
     setMealList(res.data);
   };
   //#region Effects
   useEffect(() => {
     getMember();
-    getMeal();
+    // getMeal();
   }, []);
   const toggle = (tab) => {
     if (active !== tab) {
@@ -85,17 +83,19 @@ const Member = () => {
   };
 
   const handleSubmit = async () => {
-    if (state.id !== 0) {
-      console.log("called");
-      await axios.put("http://localhost:5005/member/" + state.id, {
-        id: state.id,
-        name: state.name,
+    const payload = {
+      MemberName: state.memberName,
+      ContactNo: state.contactNo,
+    };
+    console.log(JSON.stringify(payload, null, 2));
+    if (state.memberId) {
+      await axios.put("http://localhost:5005/api/member/" + state.memberId, {
+        MemberId: state.memberId,
+        MemberName: state.memberName,
+        ContactNo: state.contactNo,
       });
     } else {
-      await axios.post("http://localhost:5005/member/", {
-        memberName: state.memberName,
-        contactNo: state.contactNo,
-      });
+      await axios.post("http://localhost:5005/api/member", payload);
     }
 
     getMember();
@@ -111,13 +111,14 @@ const Member = () => {
 
   const handleEdit = (item) => {
     const updateState = {
-      id: item.id,
-      name: item.name,
+      memberId: item.MemberId,
+      memberName: item.MemberName,
+      contactNo: item.ContactNo,
     };
     setState(updateState);
   };
   const handleDelete = async (id) => {
-    await axios.delete("http://localhost:5005/member/" + id);
+    await axios.delete(`${"http://localhost:5005/api/member"}/${id}`);
     getMember();
   };
   return (
@@ -127,15 +128,25 @@ const Member = () => {
           <div>
             <FormGroup>
               <Label for="name">Create Member</Label>
-            </FormGroup>{" "}
+            </FormGroup>
             <FormGroup className="d-flex">
               <FormGroup className="mr-2">
-                <Label for="name">Name</Label>
+                <Label for="memberName">Name</Label>
                 <Input
-                  id="name"
-                  name="name"
+                  id="memberName"
+                  name="memberName"
                   type="text"
-                  value={state.name}
+                  value={state.memberName}
+                  onChange={handleInputChange}
+                />
+              </FormGroup>
+              <FormGroup className="mr-2">
+                <Label for="contactNo">Contact No</Label>
+                <Input
+                  id="contactNo"
+                  name="contactNo"
+                  type="text"
+                  value={state.contactNo}
                   onChange={handleInputChange}
                 />
               </FormGroup>
@@ -144,11 +155,12 @@ const Member = () => {
                   type="submit"
                   className="bg-primary"
                   onClick={handleSubmit}
+                  size="md"
                 >
                   Add
                 </Button>
               </div>
-            </FormGroup>{" "}
+            </FormGroup>
             <Table>
               <thead>
                 <tr>
@@ -173,7 +185,7 @@ const Member = () => {
                       </Button>
                       <Button
                         className="bg-danger"
-                        onClick={() => handleDelete(item.id)}
+                        onClick={() => handleDelete(item.MemberId)}
                       >
                         Delete
                       </Button>
@@ -191,19 +203,24 @@ const Member = () => {
               >
                 Create Meal
               </Label>
-            </FormGroup>{" "}
+            </FormGroup>
             <FormGroup className="d-flex">
               <FormGroup className="mr-2">
                 <Label for="name">Name</Label>
-                <Input id="name" name="name" type="text" />
+                <Input id="name" name="name" type="text" onChange={() => {}} />
               </FormGroup>
               <FormGroup className="mr-2">
                 <Label for="item">Item</Label>
-                <Input id="item" name="item" type="text" />
+                <Input id="item" name="item" type="text" onChange={() => {}} />
               </FormGroup>
               <FormGroup className="mr-2">
                 <Label for="price">Price</Label>
-                <Input id="price" name="price" type="number" />
+                <Input
+                  id="price"
+                  name="price"
+                  type="number"
+                  onChange={() => {}}
+                />
               </FormGroup>
               <div className="ml-5 mt-4">
                 <Button
@@ -214,7 +231,7 @@ const Member = () => {
                   Add
                 </Button>
               </div>
-            </FormGroup>{" "}
+            </FormGroup>
             <FormGroup>
               <Table>
                 <thead>
@@ -234,7 +251,7 @@ const Member = () => {
                       <Button className="bg-success mr-2">Edit</Button>
                       <Button className="bg-danger">Delete</Button>
                     </td>
-                  </tr>{" "}
+                  </tr>
                 </tbody>
               </Table>
             </FormGroup>
@@ -301,6 +318,7 @@ const Member = () => {
                               id="status"
                               type="checkbox"
                               style={{ marginLeft: "5px" }}
+                              onChange={() => {}}
                             />
                             <span style={{ marginLeft: "25px" }}>
                               All Select
@@ -318,7 +336,12 @@ const Member = () => {
                           >
                             Select Date:
                           </Label>
-                          <Input id="month" name="month" type="date" />
+                          <Input
+                            id="month"
+                            name="month"
+                            type="date"
+                            onChange={() => {}}
+                          />
                         </FormGroup>
                       </div>
                       <Table>
@@ -331,7 +354,6 @@ const Member = () => {
                             <th>Noon</th>
                             <th>Night</th>
                             <th>Total Meal</th>
-
                             <th>Expence</th>
                           </tr>
                         </thead>
@@ -342,23 +364,40 @@ const Member = () => {
                                 <Input
                                   type="checkbox"
                                   checked={ml.mealStatus}
+                                  onChange={() => {}}
                                 />
                               </td>
                               <td>{ml.memberName}</td>
                               <td>{ml.date}</td>
                               <td>
-                                <Input type="number" value={ml.morning} />
+                                <Input
+                                  type="number"
+                                  value={ml.morning}
+                                  onChange={() => {}}
+                                />
                               </td>
                               <td>
-                                <Input type="number" value={ml.noon} />
+                                <Input
+                                  type="number"
+                                  value={ml.noon}
+                                  onChange={() => {}}
+                                />
                               </td>
                               <td>
-                                <Input type="number" value={ml.night} />
+                                <Input
+                                  type="number"
+                                  value={ml.night}
+                                  onChange={() => {}}
+                                />
                               </td>
                               <td>{ml.dayTotalMeal}</td>
 
                               <td>
-                                <Input type="number" value={ml.dailyExpence} />
+                                <Input
+                                  type="number"
+                                  value={ml.dailyExpence}
+                                  onChange={() => {}}
+                                />
                               </td>
                             </tr>
                           ))}
@@ -407,25 +446,53 @@ const Member = () => {
                               <td>{item.noon}</td>
                               <td>{item.night}</td>
                               <td>
-                                <Input type="text" value={item.totalMeal} />
-                              </td>{" "}
+                                <Input
+                                  type="text"
+                                  value={item.totalMeal}
+                                  onChange={() => {}}
+                                />
+                              </td>
                               <td>
-                                <Input type="text" value={item.totalExpence} />
-                              </td>{" "}
+                                <Input
+                                  type="text"
+                                  value={item.totalExpence}
+                                  onChange={() => {}}
+                                />
+                              </td>
                               <td>
-                                <Input type="text" value={item.mealRate} />
-                              </td>{" "}
+                                <Input
+                                  type="text"
+                                  value={item.mealRate}
+                                  onChange={() => {}}
+                                />
+                              </td>
                               <td>
-                                <Input type="text" value={item.total} />
-                              </td>{" "}
+                                <Input
+                                  type="text"
+                                  value={item.total}
+                                  onChange={() => {}}
+                                />
+                              </td>
                               <td>
-                                <Input type="text" value={item.totalBill} />
-                              </td>{" "}
+                                <Input
+                                  type="text"
+                                  value={item.totalBill}
+                                  onChange={() => {}}
+                                />
+                              </td>
                               <td>
-                                <Input type="text" value={item.extraCharge} />
-                              </td>{" "}
+                                <Input
+                                  type="text"
+                                  value={item.extraCharge}
+                                  onChange={() => {}}
+                                />
+                              </td>
                               <td>
-                                <Input type="text" value={item.dueAmount} />
+                                <Input
+                                  type="text"
+                                  value={item.dueAmount}
+                                  onChange={() => {}}
+                                />
                               </td>
                               <td>{item.payStatus ? "Paid" : "Due"}</td>
                             </tr>
@@ -475,25 +542,53 @@ const Member = () => {
                               <td>{item.noon}</td>
                               <td>{item.night}</td>
                               <td>
-                                <Input type="text" value={item.totalMeal} />
-                              </td>{" "}
+                                <Input
+                                  type="text"
+                                  value={item.totalMeal}
+                                  onChange={() => {}}
+                                />
+                              </td>
                               <td>
-                                <Input type="text" value={item.totalExpence} />
-                              </td>{" "}
+                                <Input
+                                  type="text"
+                                  value={item.totalExpence}
+                                  onChange={() => {}}
+                                />
+                              </td>
                               <td>
-                                <Input type="text" value={item.mealRate} />
-                              </td>{" "}
+                                <Input
+                                  type="text"
+                                  value={item.mealRate}
+                                  onChange={() => {}}
+                                />
+                              </td>
                               <td>
-                                <Input type="text" value={item.total} />
-                              </td>{" "}
+                                <Input
+                                  type="text"
+                                  value={item.total}
+                                  onChange={() => {}}
+                                />
+                              </td>
                               <td>
-                                <Input type="text" value={item.totalBill} />
-                              </td>{" "}
+                                <Input
+                                  type="text"
+                                  value={item.totalBill}
+                                  onChange={() => {}}
+                                />
+                              </td>
                               <td>
-                                <Input type="text" value={item.extraCharge} />
-                              </td>{" "}
+                                <Input
+                                  type="text"
+                                  value={item.extraCharge}
+                                  onChange={() => {}}
+                                />
+                              </td>
                               <td>
-                                <Input type="text" value={item.dueAmount} />
+                                <Input
+                                  type="text"
+                                  value={item.dueAmount}
+                                  onChange={() => {}}
+                                />
                               </td>
                               <td>{item.payStatus ? "Paid" : "Due"}</td>
                             </tr>
