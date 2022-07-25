@@ -99,7 +99,7 @@ const Member = () => {
     }
 
     getMember();
-    setState({ name: "" });
+    setState({ memberName: "", contactNo: "" });
   };
 
   const handleInputChange = (e) => {
@@ -119,6 +119,7 @@ const Member = () => {
   };
   const handleDelete = async (id) => {
     await axios.delete(`${"http://localhost:5005/api/member"}/${id}`);
+
     getMember();
   };
   return (

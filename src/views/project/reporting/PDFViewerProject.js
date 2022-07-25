@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
   },
 });
-const PDFViewer = (props) => {
+const PDFViewerProject = (props) => {
   const { data } = props;
   const [projectInfo, setProjectInfo] = useState(null);
   console.log(projectInfo);
@@ -86,4 +86,4 @@ const PDFViewer = (props) => {
   );
 };
 
-export default PDFViewer;
+export default PDFViewerProject;

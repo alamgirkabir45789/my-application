@@ -16,7 +16,7 @@ import {
   Table,
 } from "reactstrap";
 import CustomModal from "../../../utility/customComponent/CustomModal";
-import PDFViewer from "../reporting/PDFViewer";
+import PDFViewerProject from "../reporting/PDFViewerProject";
 const myProject = [
   {
     id: 13,
@@ -225,7 +225,7 @@ const ProjectList = () => {
         </Button>
 
         <PDFDownloadLink
-          document={<PDFViewer data={myProject} />}
+          document={<PDFViewerProject data={myProject} />}
           fileName="somename.pdf"
         >
           {({ blob, url, loading, error }) =>
@@ -239,6 +239,9 @@ const ProjectList = () => {
             )
           }
         </PDFDownloadLink>
+        {/* <PDFViewer width="100%" height="1000">
+          <PDFViewerProject data={myProject} />
+        </PDFViewer> */}
       </CardHeader>
       <CardBody>
         <CustomModal

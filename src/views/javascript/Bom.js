@@ -127,5 +127,28 @@ const data = [
   ],
 ];
 const data2 = data.flat();
-const data3 = [...new Set(data2.map(m=>m.productPartsName))]
+const data3 = [...new Set(data2.map((m) => m.productPartsName))];
 console.log(data3.toString());
+const showAlert = () => {
+  alert("hi");
+};
+const showPrompt = () => {
+  let name = window.prompt();
+  let txt;
+  if (name === null || name === "") {
+    txt = "User Cancel";
+  } else {
+    txt = "Hello" + name;
+  }
+  document.getElementById("prompt").innerHTML = txt;
+};
+const showConfirm = () => {
+  let name = window.confirm();
+  let txt;
+  if (name) {
+    txt = "Hello" + name;
+  } else {
+    txt = "Cancel";
+  }
+  document.getElementById("confirm").innerHTML = txt;
+};

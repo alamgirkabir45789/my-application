@@ -5,13 +5,13 @@ import Login from "../views/account/form/Login";
 import Register from "../views/account/form/Register";
 import Cascade from "../views/cascade/Cascade";
 import Contact from "../views/contact/list/Contact";
+import CustomerForm from "../views/customer/form/CustomerForm";
 import Error from "../views/error/form/Error";
 import Home from "../views/home/form/Home";
 import Mess from "../views/mess/home/list";
 import Product from "../views/product/list";
 import Project from "../views/project/list";
-import EmailSend from "../views/test/EmailPage";
-import MyTestPage from "../views/test/MyTestPage";
+import TodoApp from "../views/test/TodoApp";
 
 const Router = () => {
   let routes: RouteObject[] = [
@@ -42,16 +42,20 @@ const Router = () => {
           element: <Project />,
         },
         {
+          path: "/customer",
+          element: <CustomerForm />,
+        },
+        {
           path: "/product",
           element: <Product />,
         },
         {
           path: "/mail",
-          element: <EmailSend />,
+          element: <TodoApp />,
         },
         {
           path: "/test",
-          element: <MyTestPage />,
+          element: <TodoApp />,
         },
         {
           path: "/register",
