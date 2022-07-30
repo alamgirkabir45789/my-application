@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     lineHeight: 1.5,
     flexDirection: "column",
   },
+
   logo: {
     width: 84,
     height: 70,
@@ -40,19 +41,46 @@ const PDFViewerProject = (props) => {
     <Document>
       <Page size="A4" wrap style={styles.page}>
         <View>
-          <Text style={{ textAlign: "center", fontSize: 25, fontWeight: 100 }}>
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 25,
+              fontWeight: 100,
+              border: "1px solid black",
+              color: "red",
+            }}
+          >
             Project List
           </Text>
         </View>
-        <View style={{ margin: "15px 10px 0px 30px", lineHeight: 1.2 }}>
-          <View style={{ display: "flex", flexDirection: "row" }}>
+        <View
+          style={{
+            margin: "15px 10px 0px 30px",
+            lineHeight: 1.2,
+          }}
+        >
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              border: "1px solid black",
+              padding: "10px",
+            }}
+          >
             <Text style={{ fontSize: 12, fontWeight: 100, width: 80 }}>
               Sl No
             </Text>
             <Text style={{ fontSize: 12, fontWeight: 100, width: 200 }}>
               Name
             </Text>
-            <Text style={{ fontSize: 12, fontWeight: 100, width: 200 }}>
+            <Text
+              style={{
+                fontSize: 12,
+                fontWeight: 100,
+                width: 200,
+                fontStyle: "",
+              }}
+            >
               Description
             </Text>
             <Text style={{ fontSize: 12, fontWeight: 100, width: 300 }}>
@@ -63,19 +91,55 @@ const PDFViewerProject = (props) => {
             <View
               key={i}
               wrap={false}
-              style={{ display: "flex", flexDirection: "row" }}
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                border: "1px solid black",
+              }}
             >
-              <Text style={{ fontSize: 12, fontWeight: 100, width: 80 }}>
+              <Text
+                style={{
+                  fontSize: 12,
+                  fontWeight: 100,
+                  width: 80,
+                  border: "1px solid black",
+                  padding: "5px",
+                }}
+              >
                 {i + 1}.
               </Text>
-              <Text style={{ fontSize: 12, fontWeight: 100, width: 200 }}>
+              <Text
+                style={{
+                  fontSize: 12,
+                  fontWeight: 100,
+                  width: 200,
+                  border: "1px solid black",
+                  padding: "5px",
+                }}
+              >
                 {row.name}
               </Text>
 
-              <Text style={{ fontSize: 12, fontWeight: 100, width: 200 }}>
+              <Text
+                style={{
+                  fontSize: 12,
+                  fontWeight: 100,
+                  width: 200,
+                  border: "1px solid black",
+                  padding: "5px",
+                }}
+              >
                 {row.description}
               </Text>
-              <Text style={{ fontSize: 12, fontWeight: 100, width: 300 }}>
+              <Text
+                style={{
+                  fontSize: 12,
+                  fontWeight: 100,
+                  width: 300,
+                  border: "1px solid black",
+                  padding: "5px",
+                }}
+              >
                 {row.projectLink}
               </Text>
             </View>
