@@ -1,3 +1,6 @@
+const myName = "Alamgir";
+console.log(myName.trim());
+
 const clk = document.getElementById("btn");
 const debounce = (fn, delay) => {
   let timeOutId;

@@ -1,4 +1,4 @@
-import { Grid, Paper, TextField } from "@material-ui/core";
+import { Box, Grid, TextField } from "@material-ui/core";
 import React from "react";
 const arr = [
   {
@@ -72,25 +72,33 @@ console.log(filteredSerials);
 const Login = () => {
   return (
     <div>
-      <Paper elevation={5} className="m-5">
+      <Box display="flex" alignItems="center" justifyContent="center">
         <Grid
           container
           spacing={0}
           direction="column"
           alignItems="center"
           justifyContent="center"
-          style={{ minHeight: "25vh" }}
+          style={{ minHeight: "50vh" }}
         >
           <Grid item xs={3}>
             <TextField
-              label="Size"
-              id="outlined-size-small"
-              defaultValue="Small"
+              id="outlined-basic"
+              label="Outlined"
+              variant="outlined"
+              size="small"
+            />
+          </Grid>
+          <Grid item xs={3} className="mt-3">
+            <TextField
+              id="outlined-basic"
+              label="Outlined"
+              variant="outlined"
               size="small"
             />
           </Grid>
         </Grid>
-      </Paper>
+      </Box>
     </div>
   );
 };
