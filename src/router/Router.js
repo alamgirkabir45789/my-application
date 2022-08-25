@@ -2,7 +2,7 @@ import { RouteObject, useRoutes } from "react-router-dom";
 import Layout from "../navigation/Layout/Layout";
 import About from "../views/about/form/About";
 import Login from "../views/account/form/Login";
-import Register from "../views/account/form/Register";
+import RegistrationForm from "../views/account/registration/form/RegistrationForm";
 import Cascade from "../views/cascade/Cascade";
 import Contact from "../views/contact/list/Contact";
 import CustomerForm from "../views/customer/form/CustomerForm";
@@ -59,7 +59,7 @@ const Router = () => {
         },
         {
           path: "/register",
-          element: <Register />,
+          element: <RegistrationForm />,
         },
         {
           path: "/login",

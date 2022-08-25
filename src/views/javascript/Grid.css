@@ -1,0 +1,41 @@
+
+.container{
+    display: grid;
+    min-height: 100vh;
+  grid-template-columns: repeat(5,90px);
+  grid-template-rows: repeat(2,90px);
+  grid-gap: 10px;
+grid-auto-flow: dense;
+}
+.one{
+    background-color: honeydew;
+}
+.two{
+    background-color: coral;
+}
+.three{
+    background-color: lightgoldenrodyellow;
+}
+.four{
+    background-color: maroon;
+}
+.five{
+    background-color: gray;
+}
+
+.six{
+    background-color: sandybrown;
+}
+
+.seven{
+    background-color: saddlebrown;
+}
+.eight{
+    background-color: palegreen;
+}
+.nine{
+    background-color: oldlace;
+}
+.ten{
+    background-color: khaki;
+}

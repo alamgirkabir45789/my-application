@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import RegistrationForm from '../account/registration/form/RegistrationForm';
 
 const TodoApp = () => {
   const [state, setState] = useState({profileName:''});
@@ -46,6 +47,9 @@ const TodoApp = () => {
     }
   return (
     <div className='container'>
+      <div>
+        <RegistrationForm></RegistrationForm>
+      </div>
         <div>
           <label htmlFor='profileName'>Profile Name:</label>
             <input type='text' value={state.profileName} name="profileName" onChange={handleInputChange}></input>

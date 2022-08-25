@@ -1,104 +1,45 @@
-import { Box, Grid, TextField } from "@material-ui/core";
 import React from "react";
-const arr = [
-  {
-    id: "b298eab5-5184-4965-a9c1-79cb1ffe7bf1",
-    sysId: "STYLE/2022/1",
-    styleNo: "STYLE-0001012001",
-    description: "Dsfsf",
-    styleCategory: "T-Shirt",
-    buyerId: "2adb7708-51d4-49f3-bee6-0f86e23ba1cc",
-    buyerName: "H&M",
-    season: "Summer 2022",
-    year: "2022",
-    status: "Confirmed PO",
-    isActive: true,
-  },
-
-  {
-    id: "d9b55ce3-66e3-4f37-9bfb-c1f1568ec4d8",
-    sysId: "STYLE/2022/6",
-    styleNo: "SY-001",
-    description: "D",
-    styleCategory: "T-Shirt",
-    buyerId: "89ce0a8a-2e80-4a8f-88c0-d2604ba38363",
-    buyerName: "WALMART",
-    season: "Summer 2022",
-    year: "2022",
-    status: "Confirmed PO",
-    isActive: true,
-  },
-  {
-    id: "d60712e1-ae28-4f77-b499-506b604ad0af",
-    sysId: "STYLE/2022/32",
-    styleNo: "OG2435",
-    description: "GIRLS BOYFRIEND JOGGER",
-    styleCategory: "Long Pant",
-    buyerId: "79eaffef-ab5b-468c-be62-e0add563ea40",
-    buyerName: "Omni",
-    season: "Summer 2022",
-    year: "2022",
-    status: "Confirmed PO",
-    isActive: true,
-  },
-  {
-    id: "5ae7434d-fecd-427a-856d-a739d6c5ec6c",
-    sysId: "STYLE/2022/38",
-    styleNo: "AF1575",
-    description: "Avenue Anorak",
-    styleCategory: "Hoodie",
-    buyerId: "88907d57-5d32-474e-a930-34c8873253e4",
-    buyerName: "IFG",
-    season: "SPRING-22",
-    year: "2022",
-    status: "Confirmed PO",
-    isActive: true,
-  },
-];
-const arr2 = [
-  {
-    styleId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    styleNo: "STyle 01",
-  },
-  {
-    styleId: "d60712e1-ae28-4f77-b499-506b604ad0af",
-    styleNo: "OG2435",
-  },
-];
-const filteredSerials = arr.filter((s) =>
-  arr2.every((exs) => s.id !== exs.styleId)
-);
-console.log(filteredSerials);
+import { Link } from "react-router-dom";
+import "../style/Login.css";
 const Login = () => {
   return (
     <div>
-      <Box display="flex" alignItems="center" justifyContent="center">
-        <Grid
-          container
-          spacing={0}
-          direction="column"
-          alignItems="center"
-          justifyContent="center"
-          style={{ minHeight: "50vh" }}
-        >
-          <Grid item xs={3}>
-            <TextField
-              id="outlined-basic"
-              label="Outlined"
-              variant="outlined"
-              size="small"
+      <div className="wrapper">
+        <div className="logo">
+          <img
+            src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png"
+            alt=""
+          />
+        </div>
+        <div className="text-center mt-4 name">Twitter</div>
+        <form className="p-3 mt-3">
+          <div className="form-field d-flex align-items-center">
+            <span className="far fa-user"></span>
+            <input
+              type="text"
+              name="userName"
+              id="userName"
+              placeholder="Username"
             />
-          </Grid>
-          <Grid item xs={3} className="mt-3">
-            <TextField
-              id="outlined-basic"
-              label="Outlined"
-              variant="outlined"
-              size="small"
+          </div>
+          <div className="form-field d-flex align-items-center">
+            <span className="fas fa-key"></span>
+            <input
+              type="password"
+              name="password"
+              id="pwd"
+              placeholder="Password"
             />
-          </Grid>
-        </Grid>
-      </Box>
+          </div>
+          <button className="btn mt-3">Login</button>
+        </form>
+        <div className="text-center fs-6">
+          <a href="#">Forget password?</a> or{" "}
+          <Link href="#" to={`/register`}>
+            Sign up
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
