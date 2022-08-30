@@ -47,6 +47,7 @@ const TodoApp = () => {
     }
   return (
     <div className='container'>
+      
       <div>
         <RegistrationForm></RegistrationForm>
       </div>

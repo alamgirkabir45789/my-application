@@ -76,6 +76,7 @@ const data=[
 ]
 const CustomerForm = () => {
   const [photo, setPhoto] = useState( { url: '' } );
+  console.log(photo)
   const [city, setCity] = useState(null);
   const [country, setCountry] = useState(null);
   const [policeStation, setPoliceStation] = useState(null);
@@ -100,7 +101,16 @@ const [policeStationList, setPoliceStationList] = useState([])
    
     
   };
-
+const onImageChange = (e) => { 
+  console.log(e)
+  const reader=new FileReader();
+  const file=e.target.files[0]
+  reader.readAsDataURL(file)
+  reader.onload=()=>{
+    const fileres=reader.result;
+    setPhoto((prev=>({...prev,url:fileres})))
+  }
+ }
     
   // handle change event of the language dropdown
   const 
@@ -229,9 +239,11 @@ const [policeStationList, setPoliceStationList] = useState([])
             </FormGroup>
           </Col>
           <Col md={6}  >
+
             <FormGroup >           
-                       
-                        <img  src={photo.url !== "" ? photo?.url : defaultImageSrc} alt="Example" width={100} height={100} />                   
+                      <input type='file' accept="image/*" onChange={(e)=>onImageChange(e)} name="image" ></input> 
+                      
+                        <img  src={ photo.url !== "" ? photo?.url : defaultImageSrc} alt="Example" width={100} height={100} />                   
             </FormGroup>
           </Col>
         </Row>
