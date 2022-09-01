@@ -131,7 +131,16 @@ const onImageChange = (e) => {
     setPoliceStation(obj);
   };
   return (
-    <Card className="p-3 m-3">
+    <Card className="container pl-5 pr-5 m-3">
+      <div className="d-flex justify-content-center">
+        <div>
+        <img srcSet="https://thumbs.dreamstime.com/b/business-company-logo-27438246.jpg" height="50" width="50" className="rounded-circle border"></img>
+        </div>
+     <div>
+
+        <h1>Customer Registration</h1>
+     </div>
+      </div>
       <Form>
         <Row>
           <Col md={6}>
@@ -243,7 +252,7 @@ const onImageChange = (e) => {
             <FormGroup >           
                       <input type='file' accept="image/*" onChange={(e)=>onImageChange(e)} name="image" ></input> 
                       
-                        <img  src={ photo.url !== "" ? photo?.url : defaultImageSrc} alt="Example" width={100} height={100} />                   
+                        <img className="rounded "  src={ photo.url !== "" ? photo?.url : defaultImageSrc} alt="Example" width={100} height={100} />                   
             </FormGroup>
           </Col>
         </Row>
