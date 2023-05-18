@@ -16,32 +16,29 @@ const Layout = () => {
               Home
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link active" to="/project">
-              Project
-            </Link>
-          </li>
-          <li>
-            <Link className="nav-link" to="/contact">
-              contact
-            </Link>
-          </li>
           <li>
             <Link className="nav-link" to="/about">
               About
             </Link>
           </li>{" "}
-          <li>
+          <li className="nav-item">
+            <Link className="nav-link active" to="/project">
+              Project
+            </Link>
+          </li>
+         
+        
+          {/* <li>
             <Link className="nav-link" to="/cascade">
               Cascade
             </Link>
-          </li>
+          </li> */}
           {/* <li>
             <Link className="nav-link" to="/mess">
               Hotel
             </Link>
           </li> */}
-          <li className="dropdown">
+          {/* <li className="dropdown">
             <Link className="nav-link " to="/mess">
               Hotel
             </Link>
@@ -62,12 +59,12 @@ const Layout = () => {
                 </Link>{" "}
               </li>
             </ul>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link className="nav-link" to="/product">
               Product
             </Link>
-          </li>
+          </li> */}
           <UncontrolledDropdown inNavbar nav>
             <DropdownToggle nav>Customer</DropdownToggle>
             <DropdownMenu end>
@@ -89,7 +86,7 @@ const Layout = () => {
               </DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
-          <li>
+          {/* <li>
             <Link className="nav-link " to="/login">
               Login
             </Link>
@@ -98,7 +95,7 @@ const Layout = () => {
             <Link className="nav-link " to="/test">
               Test
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
 

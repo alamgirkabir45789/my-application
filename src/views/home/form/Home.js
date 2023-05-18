@@ -306,28 +306,29 @@ const Home = () => {
               <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList">
                   <li>Javascript</li>
-                  <li>ReactJs</li>
+                  <li style={{boxShadow:'2px 2px 10px',color:'green'}}>ReactJs</li>
                   <li>NodeJs</li>
                 </ul>
               </Col>
               <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList">
-                  <li>Angular</li>
-                  <li>AngularJS</li>
-                  <li>SQL</li>
+                  <li>ExpressJS</li>
+                  <li>Mongodb</li>
+                  <li>MSSQL</li>
                 </ul>
               </Col>{" "}
               <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList">
                   <li>C#</li>
-                  <li>ASP.NET</li>
-                  <li>ASP.NET MVC</li>
+                  <li>ASP.NET CORE</li>
+                  <li>ASP.NET WEB API</li>
+                
                 </ul>
               </Col>{" "}
               <Col lg={2} sm={4} md={4} xs={6}>
                 <ul className="skillList">
-                  <li>ASP.NET CORE</li>
-                  <li>ASP.NET WEB API</li>
+                <li>ASP.NET</li>
+                  <li>ASP.NET MVC</li>
                   <li>XML</li>
                 </ul>
               </Col>{" "}
